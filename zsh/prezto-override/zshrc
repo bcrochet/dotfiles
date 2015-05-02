@@ -1,0 +1,39 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Customize to your needs...
+if [[ -s "${ZDOTDIR:-$HOME}/.local_aliases" ]]; then
+  source "${ZDOTDIR:-$HOME}/.local_aliases"
+fi
+
+source $HOME/.powerline/powerline/bindings/zsh/powerline.zsh
+
+# Functions
+pyenv() { source $HOME/.virtualenvs/$*/bin/activate; }
+
+dev() {
+  if [ "2" -ne "$#" ]; then
+    echo "Usage: dev start|stop Product-folder-path" && return 1
+  elif [ "start" == "$1" ]; then
+    $HOME/bin/dev_start.sh $2
+  else
+    echo "$1 method not implmented"
+  fi
+}
+
+create_role() { mkdir -p roles/${1}/tasks; touch roles/${1}/tasks/main.yml }
+
+# Aliases
+alias grhu='git reset --hard upstream/master'
+
+for config_file ($HOME/.yadr/zsh/*.zsh) source $config_file
+for config_file ($HOME/.yadr/zsh/*.zsh) source $config_file

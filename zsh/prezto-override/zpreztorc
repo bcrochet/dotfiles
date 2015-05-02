@@ -40,7 +40,12 @@ zstyle ':prezto:load' pmodule \
   'syntax-highlighting' \
   'history-substring-search' \
   'ssh' \
-  'prompt'
+  'prompt' \
+  'python' \
+  'node' \
+  'gpg' \
+  'rails' \
+  'yum'
 
 #
 # Editor
@@ -57,7 +62,7 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 #
 
 # Ignore submodules when they are 'dirty', 'untracked', 'all', or 'none'.
-# zstyle ':prezto:module:git:status:ignore' submodules 'all'
+zstyle ':prezto:module:git:status:ignore' submodules 'untracked'
 
 #
 # GNU Utility
@@ -104,7 +109,7 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 zstyle ':prezto:module:ssh-agent' forwarding 'yes'
 
 # Set ssh-agent identities to load.
-# zstyle ':prezto:module:ssh-agent' identities 'id_rsa' 'id_rsa2' 'id_github'
+zstyle ':prezto:module:ssh-agent' identities 'id_dsa'
 
 #
 # Syntax Highlighting
@@ -121,6 +126,7 @@ zstyle ':prezto:module:ssh-agent' forwarding 'yes'
 
 #
 # Terminal
+# zstyle ':prezto:module:ssh-agent' identities 'id_rsa' 'id_rsa2' 'id_github'
 #
 
 # Auto set the tab and window titles.
