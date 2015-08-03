@@ -266,7 +266,7 @@ def install_prezto
 
   puts
   puts "Overriding prezto dotfiles with YADR's dotfile overrides to enable additional modules..."
-  file_operation(Dir.glob('zsh/prezto-override/z*'))
+  install_files(Dir.glob('zsh/prezto-override/z*'))
 
   puts
   puts "Creating directories for your customizations"
